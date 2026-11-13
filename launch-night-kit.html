@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GTA 6 Launch Night Kit</title>
+<style>
+:root{--bg:#0f1114;--card:#171a1f;--ink:#f2f0ea;--muted:#a9a79f;--line:#2b2f36;--green:#3ddc84;--amber:#f5b942;--red:#ff6b5e;--accent:#f2f0ea}
+@media(prefers-color-scheme:light){:root{--bg:#f6f4ee;--card:#fff;--ink:#14161a;--muted:#5a5852;--line:#dcd8cf;--green:#0c7a3d;--amber:#8a5a00;--red:#b3261e;--accent:#14161a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:40rem;margin:0 auto;padding:24px 16px 56px;display:grid;gap:16px}
+h1{font-size:clamp(26px,6vw,34px);line-height:1.1;margin:0}
+h2{font-size:19px;margin:0 0 10px}
+.sub{color:var(--muted);margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+label{display:block;font-weight:600;margin:0 0 6px}
+select,input[type=number]{width:100%;font:inherit;padding:11px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.row{display:grid;gap:12px}
+@media(min-width:560px){.row.two{grid-template-columns:1fr 1fr}}
+.line{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.line:first-of-type{border-top:0}
+.stamp{font:700 11px/1.2 ui-monospace,Menlo,monospace;letter-spacing:.04em;padding:5px 7px;border-radius:5px;border:1.5px solid currentColor;white-space:nowrap;margin-top:2px}
+.g{color:var(--green)}.a{color:var(--amber)}.r{color:var(--red)}
+.line p{margin:0}
+@media(max-width:559px){.line{grid-template-columns:1fr;gap:6px}.stamp{justify-self:start;margin-top:0}}
+.src{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.big{display:block;font-size:22px;font-weight:700;margin:0 0 4px;line-height:1.25}
+.ok{color:var(--green)}.bad{color:var(--red)}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line)}
+.chk:first-of-type{border-top:0}
+.chk input{width:22px;height:22px;margin-top:2px;flex:none}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:14px;color:var(--muted)}
+footer{font-size:13px;color:var(--muted)}
+:focus-visible{outline:3px solid #4a90e2;outline-offset:2px}
+.hide{display:none}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>GTA 6 Launch Night Kit</h1>
+<p class="sub">Pick your console. Get your pre-load time, your space check and the scam red flags, each with its source. Works offline.</p>
+</header>
+
+<div class="legend" aria-label="How to read the stamps">
+<span><span class="stamp g">CONFIRMED BY ROCKSTAR</span></span>
+<span><span class="stamp a">REPORTED BY</span> a named outlet</span>
+<span><span class="stamp r">UNCHECKED</span> or not listed</span>
+</div>
+
+<section class="card" aria-labelledby="s1">
+<h2 id="s1">1. Your setup</h2>
+<div class="row two">
+<div><label for="console">Console</label>
+<select id="console">
+<option value="ps5">PlayStation 5</option>
+<option value="xsx">Xbox Series X or S</option>
+<option value="xone">Xbox One</option>
+</select></div>
+<div><label for="tz">Time zone</label><select id="tz"></select></div>
+</div>
+<div style="margin-top:12px"><label for="free">Free space on your console (GB)</label>
+<input id="free" type="number" inputmode="decimal" min="0" step="1" placeholder="Example: 350">
+<span class="src">Find it in your console's storage settings.</span></div>
+</section>
+
+<section class="card" aria-live="polite" aria-labelledby="s2">
+<h2 id="s2">2. Your answers</h2>
+<div id="answers"></div>
+</section>
+
+<section class="card" aria-labelledby="s3">
+<h2 id="s3">3. Scam red flags</h2>
+<div class="line"><span class="stamp g">CONFIRMED BY ROCKSTAR</span><p>Rockstar's page lists launch as November 19, 2026. Any page selling play before that is not Rockstar's own offer.<span class="src">Read at rockstargames.com/VI on Nov 13, 2026.</span></p></div>
+<div class="line"><span class="stamp a">REPORTED BY AZFAMILY</span><p>One buyer paid $1,000 to a fake early access page.<span class="src">AZFamily, Oct 30. Last read Nov 12.</span></p></div>
+<div class="line"><span class="stamp a">REPORTED BY CYBERINSIDER</span><p>Fake pages copy Rockstar's login page to steal logins.<span class="src">CyberInsider / NordVPN. Last read Nov 12.</span></p></div>
+<div class="line"><span class="stamp g">CONFIRMED BY ROCKSTAR</span><p>Rockstar lists PS5 and Xbox Series X and S. No PC is listed, so a "PC download" has no Rockstar source.<span class="src">rockstargames.com/VI. Last read Nov 12.</span></p></div>
+<div class="line"><span class="stamp r">OUR RULE</span><p>If a page from an ad asks for your login or your card, close it and go to the store you already use.</p></div>
+</section>
+
+<section class="card" aria-labelledby="s4">
+<h2 id="s4">4. Launch night checklist</h2>
+<div id="checks"></div>
+<p class="src">Your ticks stay on this device only.</p>
+</section>
+
+<footer>
+<p>Unofficial. Not affiliated with Rockstar Games or Take-Two Interactive.</p>
+<p>Facts were read by us on the dates shown. Rockstar can change a page. Check the source before you spend money.</p>
+<p id="built">Kit built Nov 13, 2026.</p>
+</footer>
+</main>
+<script>
+(function(){
+var FACTS={
+preloadPS5:{src:"Rockstar Pre-Load FAQ, last updated Nov 3, 2026. Read Nov 13, 2026."},
+preloadXbox:{src:"Rockstar Pre-Load FAQ, last updated Nov 3, 2026. Read Nov 13, 2026."},
+size:212
+};
+var tzSel=document.getElementById('tz'),conSel=document.getElementById('console'),free=document.getElementById('free'),out=document.getElementById('answers');
+var zones=["America/New_York","America/Chicago","America/Denver","America/Los_Angeles","America/Anchorage","Pacific/Honolulu","America/Toronto","America/Mexico_City","America/Sao_Paulo","Europe/London","Europe/Paris","Europe/Berlin","Africa/Johannesburg","Asia/Dubai","Asia/Kolkata","Asia/Singapore","Asia/Tokyo","Australia/Sydney","Pacific/Auckland","UTC"];
+var mine="";try{mine=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}
+if(mine&&zones.indexOf(mine)<0)zones.unshift(mine);
+zones.forEach(function(z){var o=document.createElement('option');o.value=z;o.textContent=z.replace(/_/g,' ')+(z===mine?' (this device)':'');tzSel.appendChild(o);});
+if(mine)tzSel.value=mine;
+function fmt(d,z){try{return new Intl.DateTimeFormat('en-US',{timeZone:z,weekday:'long',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}).format(d);}catch(e){return d.toUTCString();}}
+function line(cls,label,html,src){return '<div class="line"><span class="stamp '+cls+'">'+label+'</span><p>'+html+(src?'<span class="src">'+src+'</span>':'')+'</p></div>';}
+function render(){
+var c=conSel.value,z=tzSel.value||'UTC',f=parseFloat(free.value),h='';
+var now=new Date();
+if(c==='ps5'){
+h+=line('g','CONFIRMED BY ROCKSTAR','<span class="big">Your pre-load opened at 12:00 AM on Nov 10, in '+z.replace(/_/g,' ')+'.</span>Rockstar says PS5 digital pre-load begins at midnight local time in your own time zone.',FACTS.preloadPS5.src);
+h+=line('g','CONFIRMED BY ROCKSTAR','Auto pre-load needs auto-downloads on, and the console on or in Rest Mode.','Rockstar Pre-Load FAQ. Read Nov 13, 2026.');
+}else if(c==='xsx'){
+var d=new Date(Date.UTC(2026,10,10,0,0,0));
+h+=line('g','CONFIRMED BY ROCKSTAR','<span class="big">Your pre-load opened '+fmt(d,z)+'.</span>Rockstar says Xbox Series X and S pre-load begins globally at 12 a.m. GMT on Nov 10.',FACTS.preloadXbox.src);
+h+=line('g','CONFIRMED BY ROCKSTAR','Auto pre-load needs automatic updates on, and the console on or in Sleep mode.','Rockstar Pre-Load FAQ. Read Nov 13, 2026.');
+}else{
+h+=line('g','CONFIRMED BY ROCKSTAR','<span class="big">There is no pre-load for Xbox One in the FAQ.</span>Rockstar lists pre-load for PS5 and Xbox Series X and S only.','Rockstar Pre-Load FAQ. Read Nov 13, 2026.');
+h+=line('g','CONFIRMED BY ROCKSTAR','Rockstar says GTA VI will also be available through Xbox Cloud Gaming on Xbox One consoles, at Xbox Series S graphics settings. Connection speed can change how it plays.','Rockstar Newswire, Nov 10 post. Last read Nov 12.');
+h+=line('a','REPORTED BY XBOX','Xbox lists cloud playtime per Game Pass plan: Essential 5 hours, Premium 10 hours, Ultimate 15 hours a month.','xbox.com Game Pass page. Last read Nov 12. Plans and limits can change.');
+}
+if(c!=='xone'){
+if(isNaN(f)){
+h+=line('g','CONFIRMED BY ROCKSTAR','The pre-load needs up to '+FACTS.size+' GB of free space, depending on your device. Type your free space above to check.','Rockstar Pre-Load FAQ. Read Nov 13, 2026.');
+}else if(f>=FACTS.size){
+h+=line('g','CONFIRMED BY ROCKSTAR','<span class="big ok">Yes, '+f+' GB fits.</span>The pre-load needs up to '+FACTS.size+' GB. You have '+(f-FACTS.size).toFixed(0)+' GB to spare.','Rockstar Pre-Load FAQ. Read Nov 13, 2026.');
+}else{
+h+=line('g','CONFIRMED BY ROCKSTAR','<span class="big bad">Not yet. You need up to '+(FACTS.size-f).toFixed(0)+' GB more.</span>The pre-load needs up to '+FACTS.size+' GB. Clear space or add storage before you start.','Rockstar Pre-Load FAQ. Read Nov 13, 2026.');
+}
+}
+h+=line('g','CONFIRMED BY ROCKSTAR','Launch is November 19, 2026.','rockstargames.com/VI. Read Nov 13, 2026.');
+h+=line('r','NOT LISTED','Rockstar\'s page does not list a launch unlock time. We will not guess one.','Searched rockstargames.com/VI on Nov 13, 2026. Not on that page.');
+h+=line('a','REPORTED BY XBOX STORE','Xbox\'s store lists Standard from $79.99.','xbox.com store listing. Read Nov 13, 2026. Rockstar\'s pages we read print no price.');
+out.innerHTML=h;
+}
+conSel.addEventListener('change',render);tzSel.addEventListener('change',render);free.addEventListener('input',render);
+render();
+var items=[
+["Free space is at or above 212 GB (PS5 and Xbox Series X and S).","free"],
+["Auto pre-load is on: auto-downloads (PS5) or automatic updates (Xbox).","auto"],
+["Console is on, or in Rest Mode (PS5) or Sleep mode (Xbox).","power"],
+["Your game comes from the store you already use, not an ad link.","store"],
+["Nobody gets your login, your code or your card on a page you reached from an ad.","login"],
+["Rockstar's own page is the tie breaker for any date.","tie"]
+];
+var box=document.getElementById('checks'),saved={};
+try{saved=JSON.parse(localStorage.getItem('gta_launch_kit')||'{}');}catch(e){}
+items.forEach(function(it){
+var l=document.createElement('label');l.className='chk';
+var i=document.createElement('input');i.type='checkbox';i.checked=!!saved[it[1]];
+i.addEventListener('change',function(){saved[it[1]]=i.checked;try{localStorage.setItem('gta_launch_kit',JSON.stringify(saved));}catch(e){}});
+var s=document.createElement('span');s.textContent=it[0];
+l.appendChild(i);l.appendChild(s);box.appendChild(l);
+});
+})();
+</script>
+</body>
+</html>
